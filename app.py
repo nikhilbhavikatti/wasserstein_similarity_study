@@ -10,7 +10,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 
 st.set_page_config(
-    page_title="Distribution Quiz",
+    page_title="Wasserstein Similarity Study",
     page_icon="📊",
     layout="wide",
 )
@@ -632,7 +632,7 @@ def show_study_slide():
 def show_instructions_slide():
     st.title("Instructions")
 
-    st.write("The quiz contains **20 questions**.")
+    st.write("The study contains **20 questions**.")
 
     st.write(
         """
@@ -705,7 +705,7 @@ def show_instructions_slide():
 
     with start_column:
         st.button(
-            "Start Quiz",
+            "Start Study",
             type="primary",
             width="stretch",
             on_click=start_quiz,
@@ -788,7 +788,7 @@ def show_quiz():
             )
 
     is_last_question = index == len(QUESTIONS) - 1
-    next_button_text = "Finish Quiz" if is_last_question else "Next Question"
+    next_button_text = "Finish Study" if is_last_question else "Next Question"
 
     if st.button(
         next_button_text,
@@ -804,13 +804,12 @@ def show_quiz():
 
         st.rerun()
 
-
 def show_results():
     score = sum(answer["is_correct"] for answer in st.session_state.answers)
     total = len(QUESTIONS)
     percentage = 100 * score / total
 
-    st.header("Quiz Complete")
+    st.header("Study Complete")
 
     score_column, percentage_column = st.columns(2)
 
@@ -876,13 +875,25 @@ def show_results():
         },
     )
 
-    st.button(
-        "Restart Quiz",
+    # Convert the table displayed above into a downloadable CSV.
+    csv_data = results_df.to_csv(
+        index=False,
+    ).encode("utf-8")
+
+    st.download_button(
+        label="Download Results",
+        data=csv_data,
+        file_name="wasserstein_similarity_results.csv",
+        mime="text/csv",
         type="primary",
+        width="stretch",
+    )
+
+    st.button(
+        "Restart Study",
         width="stretch",
         on_click=restart_quiz,
     )
-
 
 initialize_state()
 
