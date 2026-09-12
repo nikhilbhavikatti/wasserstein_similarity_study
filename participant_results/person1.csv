@@ -1,0 +1,21 @@
+Question,Your Answer,Correct Answer,Result,"W(A, Q)","W(B, Q)"
+Q1,Option A,Option B,Incorrect,8.0,2.279
+Q2,Option B,Option A,Incorrect,0.111,8.0
+Q3,Option A,Option B,Incorrect,6.0,0.2
+Q4,Option B,Option B,Correct,6.0,0.422
+Q5,Option B,Option A,Incorrect,2.625,4.0
+Q6,Option B,Option B,Correct,2.663,0.147
+Q7,Option A,Option B,Incorrect,4.064,2.045
+Q8,Option A,Option B,Incorrect,2.327,0.459
+Q9,Option B,Option B,Correct,2.91,0.64
+Q10,Option A,Option A,Correct,0.422,0.893
+Q11,Option B,Option B,Correct,0.935,0.453
+Q12,Option A,Option B,Incorrect,0.458,0.045
+Q13,Option B,Option A,Incorrect,0.309,1.193
+Q14,Option A,Option A,Correct,2.006,2.467
+Q15,Option B,Option B,Correct,2.54,1.063
+Q16,Option B,Option A,Incorrect,0.375,0.507
+Q17,Option A,Option B,Incorrect,0.53,0.458
+Q18,Option B,Option B,Correct,2.83,1.921
+Q19,Option A,Option A,Correct,1.921,2.0
+Q20,Option B,Option B,Correct,2.527,2.167
