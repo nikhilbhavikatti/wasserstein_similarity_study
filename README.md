@@ -294,7 +294,7 @@ Q3,Option B
 The script supports any number of participant files and generates:
 
 ```text
-output/
+study_analysis/
 ├── all_responses_merged.csv
 ├── question_summary.csv
 ├── response_matrix.csv
@@ -312,7 +312,22 @@ Run the analysis with:
 python study1_analysis.py
 ```
 
-The response matrix highlights selections that match the answer key in light green.
+
+### Analysis outputs
+
+
+| Output | Description |
+|---|---|
+| `all_responses_merged.csv` | All participant responses merged with the answer key and Wasserstein-distance information for analysis |
+| `question_summary.csv` | Per-question counts for selected A, selected B, correct responses, majority choice, both Wasserstein distances, and the Wasserstein-distance gap |
+| `response_matrix.csv` | Matrix of participant A/B selections for every question, including the correct option |
+| `response_matrix.xlsx` | Formatted response matrix with correct selections highlighted in light green |
+| `pairwise_agreement.csv` | Percentage agreement between every pair of participants |
+| `participant_accuracy.png` | Percentage of responses matching the lower-Wasserstein option for each participant |
+| `question_accuracy.png` | Percentage of participants selecting the lower-Wasserstein option for each question |
+| `response_heatmap.png` | Participant response matrix with correct selections highlighted in light green |
+| `pairwise_agreement_heatmap.png` | Heatmap showing pairwise agreement between participants |
+
 
 ## Deployment with Streamlit Community Cloud
 
